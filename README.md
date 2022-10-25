@@ -30,3 +30,23 @@ https://github.com/iamshaunjp/Strapi-Crash-Course
 frontend
 
 ## [Strapi Crash Course (with React & GraphQL) #2 - Create a Strapi App](https://www.youtube.com/watch?v=vG4M5f2wKK0&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=2)
+
+mkdir ninja-reviews
+
+cd ninja-reviews
+
+npx create-strapi-app backend
+
+Quickstart (recommended)
+
+Template: N
+
+npm run develop
+
+
+
+
+
+
+
+
