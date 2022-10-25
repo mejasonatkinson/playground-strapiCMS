@@ -43,7 +43,51 @@ Template: N
 
 npm run develop
 
+## [Strapi Crash Course (with React & GraphQL) #3 - Content Types & Endpoints](https://www.youtube.com/watch?v=TVwW01BqYQQ&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=3)
 
+
+Content-Types Builder
+
+Collecion Types
+
+blogs..
+
+---
+
+Display name: review (singlur, because strapi pluralises it automaticly)
+
+Continue
+
+Select Field Types
+
+Text field
+
+Base/Advanced Settings
+
+Add another field etc..
+
+Finish
+
+Add
+
+Save
+
+Publish
+
+---
+
+Single Type
+
+page..
+
+Components
+
+Collection of fields for Type(s)
+
+
+api folder > Type folder > Config folder > routes.json
+ 
+routes.json contains the routes to the end points for the api to interact with.
 
 
 
