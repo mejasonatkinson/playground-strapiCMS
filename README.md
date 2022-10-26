@@ -89,7 +89,107 @@ api folder > Type folder > Config folder > routes.json
  
 routes.json contains the routes to the end points for the api to interact with.
 
+# [Strapi Crash Course (with React & GraphQL) #4 - Permissions & Auth Requests](https://www.youtube.com/watch?v=N4JpylgjRK0&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=4)
 
+postman
+
+
+New 
+
+HTTPRequest
+
+GET
+
+Enter Endpoint localhost/reviews/
+
+Send
+
+Error forbidden,
+
+
+
+Strapi, protects data.
+
+Settings, Roles, Public
+
+find
+findone
+
+
+
+New 
+
+HTTPRequest
+
+GET
+
+Enter Endpoint localhost/reviews/2
+
+Send
+
+
+
+New 
+
+HTTPRequest
+
+DELETE
+
+Enter Endpoint localhost/reviews/2
+
+Send
+
+Error forbidden,
+
+
+Settings, Roles, Authenticated
+
+Select all
+
+
+User, create
+
+
+New 
+
+HTTPRequest
+
+POST
+
+Enter Endpoint localhost/auth/local
+
+Body
+
+raw, JSON
+
+{
+	"identifier": "yoshi",
+	"password": "Test1234",
+}
+
+Send
+
+creates a jwt
+copy jwt
+
+
+New 
+
+HTTPRequest
+
+DELETE
+
+Enter Endpoint localhost/reviews/2
+
+Auth
+
+Bearer Token
+
+Paste jwt into token field
+
+Send
+
+No errors.
 
 
 
