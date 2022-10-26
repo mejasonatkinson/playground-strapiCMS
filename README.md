@@ -193,4 +193,28 @@ No errors.
 
 
 
+# [Strapi Crash Course (with React & GraphQL) #5 - Creating a React App](https://www.youtube.com/watch?v=8IVQahYX-mc&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=5)
+
+npx create-react-app frontend
+
+cd frontend
+
+remove alot of the default content.
+
+components
+SiteHeader.js
+
+pages
+Homepage.js
+Category.js
+ReviewDetails.js
+
+
+ES7 React/Redux/GraphQL/React-Native snippets
+VS plugin
+
+npm install react-router-dom
+
+...
+
 
