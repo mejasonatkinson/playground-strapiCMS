@@ -217,4 +217,73 @@ npm install react-router-dom
 
 ...
 
+## [Strapi Crash Course (with React & GraphQL) #6 - Fetching Strapi Data](https://www.youtube.com/watch?v=cOE_hF2xjpM&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=6)
+
+Rest Api
+
+src/hooks/
+
+useFetch.js
+
+import { useEffect, useState } from "react"
+
+const useFetch = (uri) => {
+	const [data, setData] = useState(null);
+	const [error, setError] = useState(null);
+	const [loading, setLoading] = useState(null);
+
+	useEffect(() => {
+		const fetchData = async () => {
+		 setLoading(true)
+
+		 try {
+			const res = await fetch(uri)
+			const json = await res.json()
+
+
+			setData(json)
+			setLoading(false)
+		 } catch (error) {
+			setError(error)
+			setLoading(false)
+		 }
+		}
+
+		fetchData()
+	}, [uri])	
+
+	return { loading, error, data }
+}
+
+export default useFetch
+
+
+Homepage.js
+
+import useFetch from '../hooks/useFetch'
+
+const { loading, error, data } = useFetch('http://localhost:13337/reviews')
+
+if (loading) return <p>Loading...</p>
+if (Error) return <p>Error...</p>
+
+console.log(data);
+
+return ( 
+
+
+
+<p>Continue..</p>
+{data.map(review => (
+
+{review.rating}
+{review.title}
+{review.body.substring(0, 200)}...
+
+<Link to={'details/${review.id}'}>Read More</Link>
+
+))}
+
+
+)
 
