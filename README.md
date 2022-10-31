@@ -287,3 +287,27 @@ return (
 
 )
 
+
+## [Strapi Crash Course (with React & GraphQL) #7 - Fetching a Single Record](https://www.youtube.com/watch?v=9OwZHtH6Ppo&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=7)
+
+reviewdetails.js
+
+import { userParams } from 'react-router-dom'
+import useFetch from '../hooks/useFetch'
+
+const { loading, error, data } = useFetch('http://localhost:13337/reviews/' + id)
+
+const { id } = useParams()
+
+if (loading) return <p>Loading...</p>
+if (Error) return <p>Error...</p>
+
+console.log(data);
+
+return (
+
+{data.rating}
+{data.title}
+{data.body}
+
+)
