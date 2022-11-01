@@ -311,3 +311,35 @@ return (
 {data.body}
 
 )
+
+## [Strapi Crash Course (with React & GraphQL) #8 - GraphQL Plugin & Overview](https://www.youtube.com/watch?v=3x-DeIbuNLc&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=8)
+
+
+Strapi > Marketplace > GraphQL > 
+
+localhost:1334/graphql/
+
+GraphQL is a Query Language  
+
+
+{
+	reviews {
+		title, id, rating
+	}
+}
+
+OR
+
+query GetReviews {
+	reviews {
+		title, id, rating
+	}
+}
+
+
+
+Play
+
+returns json
+
+
