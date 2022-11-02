@@ -342,4 +342,22 @@ Play
 
 returns json
 
+## [Strapi Crash Course (with React & GraphQL) #9 - Apollo Client Setup](https://www.youtube.com/watch?v=Y5iDq-suzCA&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=9)
+
+
+npm install @apollo/client graphql
+
+
+App.js
+
+import {ApolloClient, InMemoryCache, ApooloProvider } from "@apollo/client"
+
+const client = new ApolloClient({
+uri: 'localhost:1334/graphql',
+cache: new InMemoryCache()
+})
+
+<ApolloProvider client={client}>
+	<div className="App"></div>
+</ApolloProvider>
 
