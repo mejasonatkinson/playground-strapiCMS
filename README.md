@@ -361,3 +361,23 @@ cache: new InMemoryCache()
 	<div className="App"></div>
 </ApolloProvider>
 
+## [Strapi Crash Course (with React & GraphQL) #10 - The useQuery Hook](https://www.youtube.com/watch?v=qUiox_rkdvw&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=10)
+
+Homepage.js
+
+import { useQuery, gql } from '@apollo/client'
+
+const REVIEWS = gql`
+query GetReviews {
+reviews {
+title, body, rating, id
+}
+}
+`
+
+const { loading, error, data } = useQuery(REVIEWS)
+
+{data.reviews.map(review => (
+
+
+))}
