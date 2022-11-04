@@ -381,3 +381,29 @@ const { loading, error, data } = useQuery(REVIEWS)
 
 
 ))}
+
+## [Strapi Crash Course (with React & GraphQL) #11 - Query Variables](https://www.youtube.com/watch?v=94ygizaXG38&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=11)
+
+reviewDetails.js
+
+import { useQuery, gql } from '@apollo/client'
+
+const REVIEW = gql`
+query GetReview($id: ID!) {
+review(id: $id) {
+title, body, rating, id
+}
+}`
+
+const { loading, error, data } = useQuery(REVIEW, {
+variables: { id: id }
+})
+
+{data.review.rating}
+{data.review.title}
+{data.review.body}
+
+
+
+
+
