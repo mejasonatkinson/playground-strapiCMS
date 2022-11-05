@@ -403,7 +403,58 @@ variables: { id: id }
 {data.review.title}
 {data.review.body}
 
+## [Strapi Crash Course (with React & GraphQL) #12 - Relational Data](https://www.youtube.com/watch?v=OF-GZ8j60cI&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=12)
 
+Strapi
+
+Content Type Builder
+
+Category
+
+Name
+
+Advanced > required
+
+Add new Category
+
+etc..
+
+Content Type Builder
+
+Review
+
+Relation
+
+Update Categories in reviews
+
+siteHeader.js
+
+
+import { useQuery, gql } from '@apollo/client'
+
+const CATEGORIES = gql`
+query GetCategories {
+categories {
+name, id
+}
+}
+}`
+
+
+const { loading, error, data } = useQuery(CATEGORIES)
+
+{data.categories.map(category => (
+<Link key={category.id} to {'/category/${category.id}'}>
+{category.name}
+</Link>
+))}
+
+Strapi
+
+Settings
+Roles
+Public
+Permissions
 
 
 
