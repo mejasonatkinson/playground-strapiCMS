@@ -454,5 +454,51 @@ Roles
 Public
 Permissions
 
+## [Strapi Crash Course (with React & GraphQL) #13 - Fetching Related Data](https://www.youtube.com/watch?v=Ym-UBtxril4&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=13)
 
+Category.js
+
+import { useQuery, gql } from '@apollo/client'
+
+const CATEGORY = gql`
+query GetCategory($id: ID!) {
+category(id: $id) {
+name, 
+id,
+reviews {
+title,
+body,
+rating,
+id,
+categories {
+name,
+id
+}
+}
+}
+}`
+
+const { id } = useParams()
+const { loading, error, data } = useQuery(CATEGORY, {
+variables: { id: id }
+})
+
+{ data.category.name }
+
+{data.category.reviews.map(review => (
+
+{review.id}
+{review.rating}
+{review.title}
+
+{review.categories.map(c => (
+{c.id}
+{c.name}
+))}
+
+
+{review.body.substring(0, 200)}...
+{`/details/${review.id}`}
+
+))}
 
