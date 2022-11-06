@@ -502,3 +502,14 @@ variables: { id: id }
 
 ))}
 
+## [Strapi Crash Course (with React & GraphQL) #14 - Rich Text Content](https://www.youtube.com/watch?v=mHuUASWQij4&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=14)
+
+Uses Markdown,
+Convert Markdown to HTML 
+
+npm install react-markdown
+
+import ReactMarkdown from 'react-markdown'
+
+
+<ReactMarkdown>{data.reviews.body}</ReactMarkdown>
