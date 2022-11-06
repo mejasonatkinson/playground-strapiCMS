@@ -76,43 +76,6 @@ The "front" will be the name of the directory/folder to contain the react fronte
 
 ## [Strapi Crash Course (with React & GraphQL) #6 - Fetching Strapi Data](https://www.youtube.com/watch?v=cOE_hF2xjpM&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=6)
 
-`src/hooks/`
-
-`useFetch.js`
-
-`import { useEffect, useState } from "react"`
-
-```
-const useFetch = (uri) => {
-	const [data, setData] = useState(null);
-	const [error, setError] = useState(null);
-	const [loading, setLoading] = useState(null);
-
-	useEffect(() => {
-		const fetchData = async () => {
-		 setLoading(true)
-
-		 try {
-			const res = await fetch(uri)
-			const json = await res.json()
-
-
-			setData(json)
-			setLoading(false)
-		 } catch (error) {
-			setError(error)
-			setLoading(false)
-		 }
-		}
-
-		fetchData()
-	}, [uri])	
-
-	return { loading, error, data }
-}
-
-export default useFetch
-```
 
 ## [Strapi Crash Course (with React & GraphQL) #7 - Fetching a Single Record](https://www.youtube.com/watch?v=9OwZHtH6Ppo&list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn&index=7)
 
